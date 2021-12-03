@@ -1,0 +1,59 @@
+<html>
+<head>
+	<link rel='stylesheet' href='style.css'>
+	<title>Cyberpunk Music Player</title>
+	<!--This page was made by Michael Probasco-->
+</head>
+<style>
+	body {
+		background-image: url('background.gif');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+	}	
+	button {
+		font-size: 25px;
+	}
+</style>
+
+<body>
+	<script>
+		function change_audio_file()
+		{
+			var file_list = document.getElementById('audio_list') ;
+			var file_to_play = file_list.options[ file_list.selectedIndex ].value ;
+			var player = document.getElementById('audio_player');
+			player.src = file_to_play ;
+		}
+	</script>
+	<form>
+		<div class="center">
+			<h3>Please Select a Song to Play</h3>
+			<button><a href="A_Front.html">Return to Homepage</a></button>
+		<br>
+		</div>
+		<div class="center">
+			<select onchange="change_audio_file();" id="audio_list">
+				<option selected value="">--SELECT SONG--</option>
+				<option value="dragula.mp3">Draglua (Hot Rod Herman Remix) by Rob Zombie</option>
+				<option value="ReveLucide.mp3">R&ecirc;ve Lucide by L&Uuml;NE</option>
+				<option value="take-it.mp3">We're not Gonna Take It by Twisted Sister</option>
+				<option value="derezzed.mp3">Drezzed by Daft Punk</option>
+				<option value="jerry.mp3">Going After Jerry by Pedro Brofman</option>
+			</select>
+		</div>
+	</form>
+	<br>
+	<div class="center">
+		<p>
+			<div id="audio_container">
+				<audio controls id="audio_player" src="">
+					<div>
+						Sorry, your browser does not support this audio player.
+					</div>
+				</audio>
+			</div>
+		</p>
+	</div>
+	
+<html>
